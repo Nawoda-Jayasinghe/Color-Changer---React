@@ -1,9 +1,21 @@
 import './App.css';
 import React from 'react'
 
-const ColorInput = () => {
+const ColorInput = ({newColor, setColor}) => {
   return (
-    <div></div>
+    <form className="colorForm" onSubmit={(e)=> e.preventDefault()}>
+        <input
+          autoFocus
+          id="color"
+          type="text"
+          placeHolder="Type Color"
+          required
+          value={newColor}
+          onChange = {(e) => setColor(e.target.value)}
+        />
+
+        <button>Enter</button>
+      </form>
   )
 }
 
